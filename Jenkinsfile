@@ -36,9 +36,9 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        stage('Deploy') {
+        stage('image build') {
             steps {
-                echo 'Deploying....'
+                sh "docker build -t yyyubn/spring:1.0 ."
             }
         }
     }
